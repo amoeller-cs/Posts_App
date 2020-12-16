@@ -111,7 +111,8 @@ router.post("/signup", async (req, res, next) => {
   }
 });
 
-router.get("/posts", async (req, res) => {
+// modified late to fix heroku
+router.get("/postsFetch", async (req, res) => {
   const posts = await myDB.getPosts();
   res.json(posts);
 });
@@ -121,7 +122,8 @@ router.get("/score", async (req, res) => {
   res.json(posts);
 });
 
-router.get("/likes", async (req, res) => {
+// modified late to fix heroku
+router.get("/likesFetch", async (req, res) => {
   const likes = await myDB.getLikes();
   res.json(likes);
 });
