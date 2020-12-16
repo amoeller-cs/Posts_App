@@ -25,8 +25,8 @@ function App() {
   useEffect(() => {
     const getPosts = async () => {
       console.log("getting posts");
-      try {
-        const _posts = await fetch("/posts").then((res) => res.json());
+      try { // modified late to work with Heroku
+        const _posts = await fetch("/postsFetch").then((res) => res.json());
         setPosts(_posts);
       } catch (err) {
         console.log("error ", err);
@@ -38,8 +38,8 @@ function App() {
   useEffect(() => {
     const getLikes = async () => {
       console.log("getting likes");
-      try {
-        const _likes = await fetch("/likes").then((res) => res.json());
+      try { // modified late to work with Heroku
+        const _likes = await fetch("/likesFetch").then((res) => res.json());
         setLikes(_likes);
       } catch (err) {
         console.log("error ", err);
