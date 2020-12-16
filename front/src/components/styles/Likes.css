@@ -1,0 +1,50 @@
+.likesPage {
+  background-image: url(./images/78764.jpg); /*Background vector created by rawpixel.com - www.freepik.com</a>*/
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: static;
+  backface-visibility: hidden;
+  min-height: 100vh;
+}
+
+h2 {
+  font-family: "Roboto Slab", serif;
+}
+
+.likeCard {
+  margin-top: 2%;
+  background-color: rgba(255, 255, 255, 1);
+  width: 100%;
+}
+
+div {
+  font-family: "Roboto", serif;
+}
+
+.likedPosts {
+  list-style-type: none;
+  columns: 3;
+}
+
+.listElement {
+  break-inside: avoid-column;
+}
+
+.navButton {
+  background-color: #343a40;
+  display: inline-block;
+  cursor: pointer;
+  color: white;
+  font-family: Arial;
+  font-size: 16px;
+  padding: 5px;
+  border: 1px solid #cac8c8;
+  margin: 5px;
+  border-radius: 5px;
+}
+.navButton:hover {
+  background-color: #faf9f5;
+  color: black;
+}

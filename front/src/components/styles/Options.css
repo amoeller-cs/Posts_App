@@ -1,0 +1,30 @@
+.optionsPage {
+  background-image: url(./images/78764.jpg); /*Background vector created by rawpixel.com - www.freepik.com</a>*/
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+}
+
+.deleteCard {
+  margin-top: 2%;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.navButton {
+  background-color: #343a40;
+  display: inline-block;
+  cursor: pointer;
+  color: white;
+  font-family: Arial;
+  font-size: 16px;
+  padding: 5px;
+  border: 1px solid #cac8c8;
+  margin: 5px;
+  border-radius: 5px;
+}
+.navButton:hover {
+  background-color: #faf9f5;
+  color: black;
+}
