@@ -3,6 +3,8 @@ const router = express.Router();
 const myDB = require("../db/database.js");
 const Passport = require("passport");
 const app = express();
+// you may change var bodyParser to const bodyParser
+// and seperate your own files from the external libraries in this part
 var bodyParser = require("body-parser");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -83,7 +85,9 @@ router.post("/signup", async (req, res, next) => {
     registrationParams.username == "" ||
     registrationParams.password == ""
   ) {
-    res.redirect("/register?error=Error creating account, fill all forms, ensure passwords match.");
+    res.redirect(
+      "/register?error=Error creating account, fill all forms, ensure passwords match."
+    );
   } else {
     const payload = {
       username: registrationParams.username,
@@ -148,7 +152,9 @@ router.post("/delete", async (req, res, next) => {
       users.deleteOne({
         username: info.username,
       });
-      res.redirect("/?msg=Your account was deleted. Hope to see you again soon!");
+      res.redirect(
+        "/?msg=Your account was deleted. Hope to see you again soon!"
+      );
     }
   });
 });
@@ -159,7 +165,7 @@ router.post("/upvote", async (req, res) => {
   let date = req.body.date;
   await myDB.upvote(user, title, date);
   await myDB.addLike(user, title, date);
-  res.redirect("/likes"); 
+  res.redirect("/likes");
 });
 
 router.post("/downvote", async (req, res) => {
@@ -168,7 +174,7 @@ router.post("/downvote", async (req, res) => {
   let date = req.body.date;
   await myDB.downvote(user, title, date);
   await myDB.removeLike(user, title, date);
-  res.redirect("/posts"); 
+  res.redirect("/posts");
 });
 
 router.post("/deleteLike", async (req, res) => {
@@ -177,7 +183,7 @@ router.post("/deleteLike", async (req, res) => {
   let date = req.body.date;
   await myDB.downvote(user, title, date);
   await myDB.removeLike(user, title, date);
-  res.redirect("/likes"); 
+  res.redirect("/likes");
 });
 
 module.exports = router;
